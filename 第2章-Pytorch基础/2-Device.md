@@ -9,6 +9,7 @@
 - **CPU**：`torch.device('cpu')`
 - **GPU**：`torch.device('cuda')`（需要NVIDIA显卡且安装CUDA驱动）
   - 如果有多个GPU，可以用索引指定：`cuda:0`, `cuda:1`等。
+- **补: MacOS**：`torch.device('mps')`（支持M系列芯片的MacBook）
 
 ---
 
