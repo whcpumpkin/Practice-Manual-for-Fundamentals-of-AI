@@ -11,7 +11,56 @@ Visual Studio Code（简称 VSCode）是一款由微软开发的免费、开源�
 5. 实时协作: `Live Share`
 
 ### 2. Python 代码调试
-TODO.
+
+和 cpp 类似, 我们同样可以在 VS Code 中进行逐点调试, 官方给出了[很详细的教程](https://code.visualstudio.com/docs/python/debugging#_initialize-configurations) 这里做一些简单的介绍。
+![Python Debug](./images/python-debug.png)
+而后会在当前工作区根目录中生成一个`.vscode`文件夹, 里面有一个`launch.json`文件, 存放着调试配置, 初始化如下:
+
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python Debugger: Current File", // 配置名称
+            "type": "debugpy", // 调试器类型
+            "request": "launch", // 请求类型
+            "program": "${file}", // 调试的文件: 当前文件
+            "console": "integratedTerminal" // 控制台类型
+        }
+    ]
+}
+```
+
+在后续学习中你可能想要在调试过程中传入一些参数, 那么相应的修改`launch.json`文件即可, 下面是一个例子:
+
+```json
+ {
+     "name": "Python Debugger: startup.py",
+     "type": "debugpy",
+     "request": "launch",
+     "program": "${workspaceFolder}/startup.py", // 当前工作区的startup.py文件
+     "args" : ["--port", "1593"] // 在运行时传入 python 的参数
+     // 相当于在终端中输入 python startup.py --port 1593
+ },
+
+```
+
+而后你就可以在 VS Code 中进行逐点调试了, 操作比较简单, 不在此赘述. 值得一提的是在调试时, 你可以实时调整断点, 且可以通过 Debug Console 查看变量的值, 以及执行一些简单的 Python 代码.
+
+![Debug Console](./images/python-debug-console.png)
+
+> 类似Cpp/C中的 gdb, python也提供了类似的调试工具, 例如`pdb`和`ipdb`, 由于个人使用不多, 这里放一个简单教程供感兴趣的同学参考: [Better Python Debugging With IPDB](https://hasil-sharma.github.io/2017-05-13-python-ipdb/) 
+
+```python 
+import ipdb
+ipdb.set_trace()
+```
+
+
 
 ### 3. Git 操作
 
