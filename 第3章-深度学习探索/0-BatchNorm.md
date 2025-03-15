@@ -13,6 +13,8 @@
 
 ### 1. Lipschitz约束
 
+什么是Lipschitz约束？ 我们称，若函数$f(x)$在点$x_0$附近的某个邻域内存在一个常数L，使得对任意的$x_1$和$x_2$，有$|f(x_1)-f(x_2)|\leq L|x_1-x_2|$，则称函数$f(x)$在邻域内满足Lipschitz约束。
+
 我们先假设有一个函数$f(\theta)$（具体来说，是一个损失函数），它是一个非线性函数，它的梯度满足Lipschitz约束：
 
 $\|\nabla_{\theta} f(\theta+\Delta\theta) - \nabla_{\theta} f(\theta)\|_2 \leq L \|\Delta\theta\|_2——————(2)$
