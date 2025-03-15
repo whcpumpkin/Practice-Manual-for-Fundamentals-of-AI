@@ -1,6 +1,7 @@
 # VS Code介绍
 ### 1. 安装与基础配置
 > 这里不具体介绍如何安装VSCode及Python配置, 如果有不会的同学可以参考[给计概C的配置教程](https://unexpected-saturnalia-734.notion.site/Python-VS-Code-2025-2-1a481e3e5e798106a88cf91dc496f65c?pvs=4)
+> 关于更多的环境配置与版本控制Git等学校 Linux 社团写过一个很Nice的教程文档, 可以参考[这里](https://missing.lcpu.dev/basic/01-introduction)
 
 Visual Studio Code（简称 VSCode）是一款由微软开发的免费、开源且跨平台的代码编辑器。主要特点如下: 
 
